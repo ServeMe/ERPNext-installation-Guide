@@ -28,6 +28,10 @@ which is used by lxml because it includes Python C extensions for high performan
 
     sudo apt-get install python3-dev
 
+you may have error of downloading this command like this "Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?" to solve it run
+
+    sudo apt-get update
+
 ### STEP 3 Install setuptools and pip (Python's Package Manager).
 Setuptools is a collection of enhancements to the Python distutils that allow developers 
 to more easily build and distribute Python packages, especially ones that have 
