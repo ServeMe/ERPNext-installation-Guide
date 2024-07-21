@@ -50,6 +50,18 @@ It's designed to allow you to work on multiple projects with different dependenc
 at the same time on the same machine.
     
     sudo apt-get install virtualenv
+    
+  CHECK PYTHON VERSION 
+  
+    python3 -V
+  
+  IF VERSION IS 3.8.X RUN
+  
+    sudo apt install python3.8-venv
+
+  IF VERSION IS 3.10.X RUN
+  
+     sudo apt install python3.10-venv
 
 ### STEP 5 Install MariaDB 10.3 stable package
 MariaDB is developed as open source software and as a relational database it provides an SQL interface 
@@ -218,6 +230,8 @@ before next step and You must login.
 
     Reload supervisor
       sudo service supervisor restart
+      
+      
     
 ### others
 
@@ -229,10 +243,29 @@ before next step and You must login.
       ./env/bin/python -m pip install -q -U -e /apps/frappe
     
     
-    
-    
-    
-    
-    
+
+## If you installed with --production option and you want to stop production services, and start in develop mode
+
+      sudo service supervisor stop
+      sudo service redis stop
+      sudo service nginx stop
+###  To start in develop mode, you need to have Procfile in the frappe-bench directory.
+
+      bench setup procfile
+      
+      
+### To start develop server:   
+      bench start
+### To restart the production mode agin
+
+      sudo service supervisor start
+      sudo service redis start
+      sudo service nginx start
+ 
+### To check on the status of services - mainly whether they are active or not
+
+      sudo service supervisor status
+      sudo service redis status
+      sudo service nginx status
     
     
